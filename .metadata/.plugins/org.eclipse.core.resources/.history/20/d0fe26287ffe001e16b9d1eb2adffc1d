@@ -1,0 +1,14 @@
+spring.application.name=SecuringSpringRESTAPIs
+
+##Ways for Configuring username, password and authorities
+
+##Way 1: Customizing our own Authencation manager
+
+##Way 2: There are some predefined properties as shown below which needs to be configured in the application.properties file Configuring username, password and authorities.
+#spring.security.user.name = admin
+#spring.security.user.password = Vikas@123
+#spring.security.user.roles= ROLE_USER
+
+##Way 3: If there is no user-name and password configured using the predefined properties spring.security.user.name & spring.security.user.password and in custom configuration class, Spring Boot generates a default user named "user" and password in a random fashion during the application start. And, the same will be found in the console log.
+
+##Way 4: fetch user-name and password from database table

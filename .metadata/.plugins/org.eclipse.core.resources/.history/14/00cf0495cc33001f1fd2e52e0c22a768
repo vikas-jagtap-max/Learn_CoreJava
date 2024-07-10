@@ -1,0 +1,14 @@
+package BreakingSingletonDesignPattern;
+
+public class SingletonClass {
+	private static SingletonClass onlyOneObject = null;
+
+	private SingletonClass() {
+		// Initialization code here
+	}
+
+	// Global access point to get the Singleton instance
+	public static SingletonClass getInstance() {
+		return;
+	}
+}

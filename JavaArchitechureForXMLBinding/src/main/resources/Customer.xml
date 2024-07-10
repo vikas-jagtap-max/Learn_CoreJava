@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customerDTO>
+	<aadharId>8689043</aadharId>
+	<acctType>C</acctType>
+	<balance>5698.0</balance>
+	<city>Pune</city>
+	<emailId>vikasjagtap969@gmail.com</emailId>
+	<firstName>Vikas</firstName>
+	<lastName>Jagtap</lastName>
+	<pinCode>413719</pinCode>
+	<state>Maharashtra</state>
+</customerDTO>

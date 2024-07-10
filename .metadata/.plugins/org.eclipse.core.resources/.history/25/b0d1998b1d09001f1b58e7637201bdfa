@@ -1,0 +1,24 @@
+package topic.Serialization.TransientKeyword;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class PersistAndDeserialize {
+
+	public static void main(String[] args) throws IOException {
+
+		// creating object
+		Student s1 = new Student(211, "Vikas", "vikasjagtap969@gmail.com");
+
+		// writing serialized object into file
+		FileOutputStream student = new FileOutputStream("student.txt");
+		ObjectOutputStream out = new ObjectOutputStream(student);
+		out.writeObject(s1);
+		out.flush();
+		out.close();
+		student.close();
+		System.out.println("successfully persisted serialized object");
+	}
+
+}

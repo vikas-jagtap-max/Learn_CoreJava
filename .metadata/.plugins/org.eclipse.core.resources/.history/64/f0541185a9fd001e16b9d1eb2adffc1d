@@ -1,0 +1,42 @@
+package com.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+	// Configuring username and password and authorities
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication().withUser("admin").password(passwordEncoder().encode("Vikas@123"))
+				.authorities("ROLE_USER");
+	}
+
+	// Configuring the HttpSecurity
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+
+		http.authorizeRequests().antMatchers("/securityNone").permitAll()// URLS starting with securityNone need not be
+																			// authenticated
+				.anyRequest().authenticated() // rest of the URL's should be authenticated
+				.and().httpBasic().and()// Every request should be authenticated it should not store in a session
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER).and().csrf().disable();
+
+	}
+
+	// The passwordEncorder to be used.
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+}

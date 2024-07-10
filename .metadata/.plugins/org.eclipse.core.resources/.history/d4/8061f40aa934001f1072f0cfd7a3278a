@@ -1,0 +1,28 @@
+package pattern.BuilderDesignPattern;
+
+public class ComputerBuilder {
+	// Mandatory fields
+	private String HDD;
+	private String RAM;
+
+	// Optional fields
+	private boolean isGraphicsCardEnabled;
+
+	//
+	public ComputerBuilder(String hDD, String rAM) {
+		HDD = hDD;
+		RAM = rAM;
+	}
+
+	//
+	public ComputerBuilder setGraphicsCardEnabled(boolean isGraphicsCardEnabled) {
+		this.isGraphicsCardEnabled = isGraphicsCardEnabled;
+		return this;
+	}
+
+	// Method to build the object of computer class
+	public Computer build() {
+		return new Computer(this);
+	}
+
+}

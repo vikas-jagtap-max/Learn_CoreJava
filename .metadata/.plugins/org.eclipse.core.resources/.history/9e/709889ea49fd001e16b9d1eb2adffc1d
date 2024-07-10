@@ -1,0 +1,11 @@
+spring.application.name=SecuringSpringRESTAPIs
+
+##Ways for Configuring username, password and authorities
+
+##Way 1: Autowiring configureGlobal method in configuration class
+
+##Way 2: There are some predefined properties as shown below which needs to be configured in the application.properties file Configuring username, password and authorities.
+#spring.security.user.name = admin
+#spring.security.user.password = Vikas@123
+##If there is no password configured using the predefined property spring.security.user.password, Spring Boot generates a password in a random fashion during the application start. And, the same will be found in the console log.
+#spring.security.user.roles= ROLE_USER

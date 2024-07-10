@@ -1,0 +1,15 @@
+package pattern.BuilderDesignPattern;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		// Create Computer Class instance using Builder
+
+		Computer computer = new Computer.ComputerBuilder().setGraphicsCardEnabled(true).build();
+		System.out.println("HDD: " + computer.getHDD());
+		System.out.println("RAM: " + computer.getRAM());
+		System.out.println("Graphics Card Enabled: " + computer.getHDD());
+	}
+
+}

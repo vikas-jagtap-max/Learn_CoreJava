@@ -1,0 +1,9 @@
+package BreakingSingletonDesignPattern;
+
+public class BreakUsingCloning {
+
+	public static void main(String[] args) {
+
+	}
+
+}

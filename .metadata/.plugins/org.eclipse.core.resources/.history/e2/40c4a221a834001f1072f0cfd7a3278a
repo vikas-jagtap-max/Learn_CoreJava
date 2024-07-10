@@ -1,0 +1,13 @@
+package pattern.BuilderDesignPattern;
+
+//Product Class
+public class Computer {
+	// Mandatory fields
+	private String HDD;
+	private String RAM;
+
+	// Optional fields
+	private boolean isGraphicsCardEnabled;
+
+	
+}
